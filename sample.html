@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>サンプル</title>
+<meta name="viewport" content="width=device-width">
+
+<script defer src="https://use.fontawesome.com/releases/v5.0.10/js/all.js" integrity="sha384-slN8GvtUJGnv6ca26v8EzVaR9DC58QEwsIk9q1QXdCU8Yu8ck/tL/5szYlBbqmS+" crossorigin="anonymous"></script>
+<link href="https://fonts.googleapis.com/earlyaccess/notosansjapanese.css" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
+</head>
+<body class="page">
+
+
+<header class="page-head">
+	<a href="#"><img src="img/sitelogo.svg" alt="ONE POINT"></a>
+</header>
+
+
+<main class="page-main">
+
+<section class="burger">
+
+<h2 class="burger-title">新鮮採れたて野菜が<br>おいしいハンバーガー</h2>
+
+<figure class="burger-photo">
+<img src="img/burger.jpg" alt="">
+</figure>
+
+<div class="burger-text">
+<p>肉汁たっぷりなお肉と新鮮な野菜を一緒に楽しむなら、ここのハンバーガーが一押しです。トマトにレタス、キュウリ、玉ねぎ、アボガド、ピクルスなどなど、いろいろな野菜が用意されていて、好きなものを組み合わせてオリジナルのバーガーを作ることもできます。その時々の旬な野菜もラインナップに並びますので、季節の変わり目ごとに訪れるのも楽しみの１つです。</p>
+<p>北海道産の小麦で作った焼き立てバンズも、お肉や野菜のジューシーな旨味を引き出してくれます。</p>
+<p>スペシャルバーガーセットなら具材とバンズを別々に持ち帰り、お家で出来たてバーガーを楽しむこともできます。ちょっとしたホームパーティにもおすすめです。</p>
+</div>
+
+<div class="burger-sub">
+<img src="img/coffee.jpg" alt="">
+<p>モーニングセットのドリンクメニューでは暖かいカプチーノも用意されています。</p>
+</div>
+
+</section>
+
+</main>
+
+
+<nav class="page-nav">
+<ul>
+<li><a href="#">トップ</a></li>
+<li><a href="#">最新記事</a></li>
+<li><a href="#">お食事シリーズ</a></li>
+<li><a href="#">おでかけシリーズ</a></li>
+<li><a href="#">お問い合わせ</a></li>
+</ul>
+</nav>
+
+<button type="button" class="page-btn" onclick="myFunc()">
+	<span class="fas fa-bars" title="メニューを開く"></span>
+</button>
+
+<button type="button" class="page-btn-close" onclick="myFunc()">
+	<span class="fas fa-times" title="メニューを閉じる"></span>
+</button>
+
+
+<footer class="page-foot">
+	<p>© ONE POINT</p>
+</footer>
+
+
+<script>
+function myFunc() {
+document.querySelector('.page').classList.toggle('open');
+}
+</script>
+<script>
+var ua = window.navigator.userAgent.toLowerCase();
+
+if(ua.indexOf('safari') != -1 && ua.indexOf('version/10') != -1) {
+
+var imgs = document.querySelectorAll('.burger-photo img');
+
+var imgs = Array.prototype.slice.call(imgs,0);
+
+imgs.forEach(function(value, index, array) {
+	var imgurl = value.src;
+	var fig = value.parentNode;
+	fig.style.backgroundImage = 'url(' + imgurl + ')';
+	fig.style.backgroundSize = 'cover';
+	fig.style.backgroundPosition = 'center';
+	fig.style.minHeight = '250px';
+	value.style.display = 'none';
+});
+
+}
+</script>
+</body>
+</html>
